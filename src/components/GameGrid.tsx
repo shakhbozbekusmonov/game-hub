@@ -1,11 +1,9 @@
+import { useState } from "react";
 import { Button, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import { useGames } from "../hooks";
-import { Genre } from "../hooks/useGenres";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Platform } from "../hooks/useGames";
-import { useState } from "react";
 import { GameQuery } from "../App";
 
 interface Props {
