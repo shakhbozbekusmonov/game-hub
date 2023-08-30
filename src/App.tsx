@@ -1,7 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/layout";
 import { Show } from "@chakra-ui/media-query";
-import { NavBar, GameGrid } from "./components";
-import GenreList from "./components/GenreList";
+import { NavBar, GameGrid, GenreList } from "./components";
 
 const App = () => {
     return (
