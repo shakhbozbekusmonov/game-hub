@@ -1,4 +1,3 @@
-```markdown
 # Game Hub Discovery Web Application
 
 Welcome to the Game Hub Discovery web application! This application leverages the RAWG API to provide a platform for discovering and exploring video games. Whether you're a gamer looking for new titles or a developer interested in using this API, this documentation will guide you through the setup and usage.
