@@ -18,33 +18,34 @@ const GameGrid = ({ gameQuery }: Props) => {
     if (error) return <Text>{error}</Text>;
 
     return (
-        <SimpleGrid
-            columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-            padding='10px'
-            spacing={6}>
-            {isLoading &&
-                skeletons.map((skeleton) => (
-                    <GameCardContainer key={skeleton}>
-                        <GameCardSkeleton />
+        <>
+            <SimpleGrid
+                columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+                padding='10px'
+                spacing={6}>
+                {isLoading &&
+                    skeletons.map((skeleton) => (
+                        <GameCardContainer key={skeleton}>
+                            <GameCardSkeleton />
+                        </GameCardContainer>
+                    ))}
+                {data.slice(0, gamesToShow).map((game) => (
+                    <GameCardContainer key={game.id}>
+                        <GameCard game={game} />
                     </GameCardContainer>
                 ))}
-            {data.slice(0, gamesToShow).map((game) => (
-                <GameCardContainer key={game.id}>
-                    <GameCard game={game} />
-                </GameCardContainer>
-            ))}
+            </SimpleGrid>
             {data.length > gamesToShow && (
-                <Flex justifyContent='center'>
+                <Flex justifyContent='center' marginY={3}>
                     <Button
                         colorScheme='teal'
                         variant='outline'
-                        mx='auto'
                         onClick={() => setGameToShow(gamesToShow + 4)}>
                         See More
                     </Button>
                 </Flex>
             )}
-        </SimpleGrid>
+        </>
     );
 };
 
