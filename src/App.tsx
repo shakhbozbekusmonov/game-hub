@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Grid, GridItem } from "@chakra-ui/layout";
 import { Show } from "@chakra-ui/media-query";
-import { HStack } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import {
     NavBar,
     GameGrid,
@@ -45,20 +45,22 @@ const App = () => {
                 </GridItem>
             </Show>
             <GridItem area='main'>
-                <HStack spacing={5} paddingLeft={2} marginBottom={5}>
-                    <PlatformSelector
-                        onSelectPlatform={(platform) =>
-                            setGameQuery({ ...gameQuery, platform })
-                        }
-                        selectedPlatform={gameQuery.platform}
-                    />
+                <Flex paddingLeft={2} marginBottom={5}>
+                    <Box marginRight={5}>
+                        <PlatformSelector
+                            onSelectPlatform={(platform) =>
+                                setGameQuery({ ...gameQuery, platform })
+                            }
+                            selectedPlatform={gameQuery.platform}
+                        />
+                    </Box>
                     <SortSelector
                         onSelectSortOrder={(sortOrder) =>
                             setGameQuery({ ...gameQuery, sortOrder })
                         }
                         sortOrder={gameQuery.sortOrder}
                     />
-                </HStack>
+                </Flex>
                 <GameGrid gameQuery={gameQuery} />
             </GridItem>
         </Grid>
