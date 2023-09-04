@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Grid, GridItem } from "@chakra-ui/layout";
 import { Show } from "@chakra-ui/media-query";
 import { Box, Flex } from "@chakra-ui/react";
@@ -12,6 +12,7 @@ import {
 } from "./components";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
+import apiClient from "./services/api-client";
 
 export interface GameQuery {
     genre: Genre | null;
@@ -22,6 +23,10 @@ export interface GameQuery {
 
 const App = () => {
     const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+
+    useEffect(() => {
+        apiClient.get("/games/3498/movies").then((res) => console.log(res.data));
+    }, []);
 
     return (
         <Grid
