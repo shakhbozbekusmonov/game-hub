@@ -6,6 +6,10 @@ Welcome to the Game Hub Discovery web application! This application leverages th
 
 ![GameHub screenshot-2](./static/screenshot-2.png)
 
+![GameHub screenshot-2](./static/screenshot-3.png)
+
+![GameHub screenshot-2](./static/screenshot-4.png)
+
 ## Table of Contents
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
